@@ -18,18 +18,17 @@ const initialState={
                 }]
             } 
             break;
+
         case REMOVE_TODO:
             const newlist = state.todos.filter((item) => item.id !== action.id)
             return{
                 ...state,
                 todos:newlist   
             }
-
             break;
+
         case UPDATE_TODO:
                 const updatedTodo = state.todos.map((todo) =>{
-                        console.log(todo.id);
-                        console.log("updated value "+action.payload.data)
                     if(todo.id !== action.payload.id){
                         return{
                             ...todo,
